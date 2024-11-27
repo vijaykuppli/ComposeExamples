@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ComposeExamples</string>
+    <string name="title_activity_column_example">ColumnExampleActivity</string>
+    <string name="title_activity_row_example">RowExampleActivity</string>
+    <string name="title_activity_modifier_example">ModifierExampleActivity</string>
+    <string name="title_activity_image_example">ImageExampleActivity</string>
+</resources>
