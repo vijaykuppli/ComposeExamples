@@ -1,4 +1,4 @@
-package com.vijaykuppli.android.ui.theme
+package com.vijaykuppli.android.screen.ui.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

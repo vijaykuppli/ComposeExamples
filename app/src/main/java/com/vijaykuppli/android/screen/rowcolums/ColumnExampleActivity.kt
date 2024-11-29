@@ -1,4 +1,4 @@
-package com.vijaykuppli.android.screen
+package com.vijaykuppli.android.screen.rowcolums
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

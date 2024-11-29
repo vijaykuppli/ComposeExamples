@@ -13,7 +13,73 @@
         android:theme="@style/Theme.ComposeExamples"
         tools:targetApi="31">
         <activity
-            android:name=".screen.ImageExampleActivity"
+            android:name=".screen.constraintlayout.ConstriantLayoutExampleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_constriant_layout_example"
+            android:theme="@style/Theme.ComposeExamples">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.lazylist.LazyLoadExampleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_lazy_load_example"
+            android:theme="@style/Theme.ComposeExamples">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.simplelist.SimpleListExampleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_simple_list_example"
+            android:theme="@style/Theme.ComposeExamples">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.edittext.EditTextExampleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_edit_text_example"
+            android:theme="@style/Theme.ComposeExamples">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.stateflow.StateFlowExampleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_state_flow_example"
+            android:theme="@style/Theme.ComposeExamples">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.textview.TextStyleExampleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_text_style_example"
+            android:theme="@style/Theme.ComposeExamples">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.image.ImageExampleActivity"
             android:exported="true"
             android:label="@string/title_activity_image_example"
             android:theme="@style/Theme.ComposeExamples">
@@ -24,7 +90,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screen.ModifierExampleActivity"
+            android:name=".screen.modifier.ModifierExampleActivity"
             android:exported="true"
             android:label="@string/title_activity_modifier_example"
             android:theme="@style/Theme.ComposeExamples">
@@ -35,7 +101,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screen.RowExampleActivity"
+            android:name=".screen.rowcolums.RowExampleActivity"
             android:exported="true"
             android:label="@string/title_activity_row_example"
             android:theme="@style/Theme.ComposeExamples">
@@ -46,7 +112,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screen.ColumnExampleActivity"
+            android:name=".screen.rowcolums.ColumnExampleActivity"
             android:exported="true"
             android:label="@string/title_activity_column_example"
             android:theme="@style/Theme.ComposeExamples">
