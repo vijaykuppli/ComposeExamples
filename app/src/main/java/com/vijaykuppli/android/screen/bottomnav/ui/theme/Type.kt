@@ -1,4 +1,4 @@
-package com.vijaykuppli.android.screen.constraintlayout.ui.theme
+package com.vijaykuppli.android.screen.bottomnav.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

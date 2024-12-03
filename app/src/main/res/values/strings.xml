@@ -10,4 +10,6 @@
     <string name="title_activity_simple_list_example">SimpleListExampleActivity</string>
     <string name="title_activity_lazy_load_example">LazyLoadExampleActivity</string>
     <string name="title_activity_constriant_layout_example">ConstriantLayoutExampleActivity</string>
+    <string name="title_activity_launched_effect">LaunchedEffectActivity</string>
+    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
 </resources>
