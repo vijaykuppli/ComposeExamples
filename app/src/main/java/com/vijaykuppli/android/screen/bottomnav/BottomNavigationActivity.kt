@@ -31,15 +31,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vijaykuppli.android.R
+import com.vijaykuppli.android.screen.bottomnav.models.BottomNavMenu
+import com.vijaykuppli.android.screen.bottomnav.ui.theme.AquaBlue
 import com.vijaykuppli.android.screen.bottomnav.ui.theme.BlueViolet2
 import com.vijaykuppli.android.screen.bottomnav.ui.theme.ButtonBlue
 import com.vijaykuppli.android.screen.bottomnav.ui.theme.DarkerButtonBlue
@@ -83,6 +85,15 @@ fun ShowHomeView() {
                 )
             )
         }
+        BottomNavMenuItems(
+            menuItems = listOf(
+                BottomNavMenu("Watch", R.drawable.search),
+                BottomNavMenu("Shop", R.drawable.search),
+                BottomNavMenu("Visit", R.drawable.search),
+                BottomNavMenu("Search", R.drawable.search)
+            ),
+            modifier = Modifier.align(Alignment.BottomCenter)
+        )
     }
 }
 
@@ -224,7 +235,11 @@ fun CurvedFeatureBox(featureList: List<FeatureList>) {
             fontFamily = FontFamily.SansSerif
         )
 
-        Spacer(modifier = Modifier.height(20.dp).fillMaxWidth())
+        Spacer(
+            modifier = Modifier
+                .height(20.dp)
+                .fillMaxWidth()
+        )
         LazyVerticalGrid(
             columns = GridCells.Fixed(2)
         ) {
@@ -253,5 +268,70 @@ fun CurvedFeatureBox(featureList: List<FeatureList>) {
                 }
             }
         }
+    }
+}
+
+@Composable
+fun BottomNavMenuItems(
+    menuItems: List<BottomNavMenu>,
+    modifier: Modifier = Modifier,
+    initialSelectedItemIndex: Int = 0
+) {
+    var selectedItemIndex by remember {
+        mutableIntStateOf(initialSelectedItemIndex)
+    }
+
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceAround,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+            .background(DeepBlue)
+    ) {
+        menuItems.forEachIndexed { index, item ->
+            BottomMenuItem(
+                menuItem = item,
+                isSelected = selectedItemIndex == initialSelectedItemIndex
+            ) {
+                selectedItemIndex = index
+            }
+        }
+    }
+}
+
+@Composable
+fun BottomMenuItem(
+    menuItem: BottomNavMenu,
+    isSelected: Boolean,
+    activeHighLightColor: Color = ButtonBlue,
+    activeHighLightTextColor: Color = Color.White,
+    inActiveTextColor: Color = AquaBlue,
+    onItemClick: () -> Unit
+) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.clickable {
+            onItemClick()
+        }
+    ) {
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .clip(RoundedCornerShape(10.dp))
+                .background(if (isSelected) activeHighLightColor else Color.Transparent)
+        ) {
+            Icon(
+                painter = painterResource(menuItem.icon),
+                contentDescription = "ContentDescritpion",
+                tint = if (isSelected) activeHighLightColor else inActiveTextColor,
+                modifier = Modifier.size(20.dp)
+            )
+        }
+        Text(
+            text = menuItem.title,
+            style = TextStyle(color = if (isSelected) activeHighLightTextColor else inActiveTextColor)
+        )
     }
 }
