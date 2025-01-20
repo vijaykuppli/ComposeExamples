@@ -28,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -131,7 +132,11 @@ fun ShowGreetingSection(name: String = "Vijay Santosh kumar") {
 
 @Composable
 fun ShowHorizontalButtons(buttonList: List<String>) {
-    var selectedButtonNameState by remember {
+    /**
+     * remeber keyword saves the UI state but it doesn't handle screenorientation or app kills or
+     * change the theeme. So, we can use remeberSaveable to do that.
+     */
+    var selectedButtonNameState by rememberSaveable {
         mutableIntStateOf(0)
     }
     LazyRow {
@@ -241,7 +246,9 @@ fun CurvedFeatureBox(featureList: List<FeatureList>) {
                 .fillMaxWidth()
         )
         LazyVerticalGrid(
-            columns = GridCells.Fixed(2)
+            columns = GridCells.Fixed(2),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             items(count = featureList.size) {
                 Box(

@@ -48,10 +48,10 @@ fun TextStyleExample() {
                     fontSize = 30.sp,
                     fontWeight = FontWeight.Bold,
                     textDecoration = TextDecoration.Underline
-                ), {
-                    append("Vijay")
-                }
-            )
+                )
+            ) {
+                append("Vijay")
+            }
             append("santosh")
             withStyle(
                 style = SpanStyle(
@@ -59,10 +59,10 @@ fun TextStyleExample() {
                     fontSize = 30.sp,
                     fontWeight = FontWeight.Bold,
                     textDecoration = TextDecoration.Underline
-                ), {
-                    append("Kumar")
-                }
-            )
+                )
+            ) {
+                append("Kumar")
+            }
         },
         fontSize = 20.sp,
         fontStyle = FontStyle.Normal,
