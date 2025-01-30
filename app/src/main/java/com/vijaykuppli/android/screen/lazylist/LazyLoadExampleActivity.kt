@@ -26,7 +26,7 @@ class LazyLoadExampleActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            LazyColumnIndexItemExample()
+            LazyColumnItemsExample()
         }
     }
 }
@@ -57,7 +57,7 @@ fun LazyColumnItemsExample() {
 @Composable
 fun LazyColumnIndexItemExample() {
     LazyColumn {
-        itemsIndexed(items = listOf("Vijay", "Santosh", "Kumar", "Kuppli")) { index, string ->
+        itemsIndexed(items = listOf("Vijay", "Santosh", "Kumar", "Kuppli")) { _, string ->
             Text(
                 text = "Loading $string",
                 fontSize = 30.sp,

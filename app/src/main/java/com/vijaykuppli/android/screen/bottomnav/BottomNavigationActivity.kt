@@ -323,22 +323,16 @@ fun BottomMenuItem(
             onItemClick()
         }
     ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .clip(RoundedCornerShape(10.dp))
-                .background(if (isSelected) activeHighLightColor else Color.Transparent)
-        ) {
-            Icon(
-                painter = painterResource(menuItem.icon),
-                contentDescription = "ContentDescritpion",
-                tint = if (isSelected) activeHighLightColor else inActiveTextColor,
-                modifier = Modifier.size(20.dp)
-            )
-        }
+        Icon(
+            painter = painterResource(menuItem.icon),
+            contentDescription = "ContentDescritpion",
+            tint = if (isSelected) activeHighLightColor else inActiveTextColor,
+            modifier = Modifier.size(20.dp)
+        )
         Text(
             text = menuItem.title,
             style = TextStyle(color = if (isSelected) activeHighLightTextColor else inActiveTextColor)
         )
+
     }
 }

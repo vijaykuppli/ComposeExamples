@@ -44,7 +44,7 @@ fun ColumnExample() {
  * 1. If you use column use horizontalAlignment and verticalArrangement both otherwise it
  * won't give any impact on the UI.
  * 2. Modifier is the betteer attribute to set column width and height. Instead of fillMaxSize
- * we can specify width and height manually like width(20.dp), height(30.dp)
+ * we can specify width and height also manually like width(20.dp), height(30.dp)
  */
 
 @Composable

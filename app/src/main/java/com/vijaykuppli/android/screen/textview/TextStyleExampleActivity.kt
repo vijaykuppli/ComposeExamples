@@ -33,40 +33,37 @@ class TextStyleExampleActivity : ComponentActivity() {
 
 @Composable
 fun TextStyleExample() {
-    val fontSizes = FontFamily(
+    val customFontFamily = FontFamily(
         Font(R.font.roboto_black, FontWeight.Bold),
         Font(R.font.roboto_light, FontWeight.Bold)
     )
+    val customSpanStyle = SpanStyle(
+        color = Color.Red,
+        fontSize = 30.sp,
+        fontWeight = FontWeight.Bold,
+        textDecoration = TextDecoration.Underline
+    )
+
     Text(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 30.dp),
         text = buildAnnotatedString {
             withStyle(
-                style = SpanStyle(
-                    color = Color.Red,
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    textDecoration = TextDecoration.Underline
-                )
+                style = customSpanStyle
             ) {
                 append("Vijay")
             }
             append("santosh")
             withStyle(
-                style = SpanStyle(
-                    color = Color.Red,
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    textDecoration = TextDecoration.Underline
-                )
+                style = customSpanStyle
             ) {
                 append("Kumar")
             }
         },
         fontSize = 20.sp,
         fontStyle = FontStyle.Normal,
-        fontFamily = fontSizes,
+        fontFamily = customFontFamily,
         color = Color.Blue,
         fontWeight = FontWeight.Thin,
         textAlign = TextAlign.Center
